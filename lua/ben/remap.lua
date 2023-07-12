@@ -44,7 +44,7 @@ vim.keymap.set("n", "<leader>l", "<cmd>lprev<CR>zz")
 
 -- search and replace all occurrences of the current word
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>s", [[:%s/\<\>//gc<Left><Left><Left><Left><Left><Left>]])
+vim.keymap.set("n", "<leader>sr", [[:%s/\<\>//gc<Left><Left><Left><Left><Left><Left>]])
 
 -- make current file executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
