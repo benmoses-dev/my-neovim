@@ -52,5 +52,13 @@ return require('packer').startup(function(use)
     use('folke/tokyonight.nvim')
     use('rebelot/kanagawa.nvim')
 
+    -- File explorer
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
+        },
+    }
+
 end)
 
