@@ -29,9 +29,7 @@ return require('packer').startup(function(use)
 		requires = {
 			-- LSP Support
 			{'neovim/nvim-lspconfig'},
-			{'williamboman/mason.nvim', run = function()
-				pcall(vim.cmd, 'MasonUpdate')
-			end},
+			{'williamboman/mason.nvim', run = ":MasonUpdate"},
 			{'williamboman/mason-lspconfig.nvim'},
 
 			-- Autocompletion
@@ -40,5 +38,8 @@ return require('packer').startup(function(use)
 			{'L3MON4D3/LuaSnip'},
 		}
 	}
+
+    use('simrat39/rust-tools.nvim')
+
 end)
 
