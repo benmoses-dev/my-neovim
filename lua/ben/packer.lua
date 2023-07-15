@@ -4,46 +4,58 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
     -- Find files and content across project
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.2',
-		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.2',
+        -- or                            , branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
 
     -- Syntax highlighting
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
-	use('nvim-treesitter/playground')
+    use("nvim-treesitter/nvim-treesitter-context")
+
+    use('nvim-treesitter/playground')
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
 
     -- Bookmark commonly used files
-	use('ThePrimeagen/harpoon')
+    use('ThePrimeagen/harpoon')
 
     -- Complete undo history including branches
-	use('mbbill/undotree')
+    use('mbbill/undotree')
 
     -- Git integration
-	use('tpope/vim-fugitive')
+    use('tpope/vim-fugitive')
+    use('airblade/vim-gitgutter')
 
     -- Language server support
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v2.x',
-		requires = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},
-			{'williamboman/mason.nvim', run = ":MasonUpdate"},
-			{'williamboman/mason-lspconfig.nvim'},
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        requires = {
+            -- LSP Support
+            { 'neovim/nvim-lspconfig' },
+            { 'williamboman/mason.nvim',          run = ":MasonUpdate" },
+            { 'williamboman/mason-lspconfig.nvim' },
 
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},
-			{'hrsh7th/cmp-nvim-lsp'},
-			{'L3MON4D3/LuaSnip'},
-		}
-	}
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'L3MON4D3/LuaSnip' },
+        }
+    }
+
+    use('github/copilot.vim')
 
     -- Rust utilities
     use('simrat39/rust-tools.nvim')
@@ -59,6 +71,4 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional
         },
     }
-
 end)
-
