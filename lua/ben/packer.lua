@@ -21,6 +21,10 @@ return require('packer').startup(function(use)
 
     use('nvim-treesitter/playground')
 
+    use("windwp/nvim-autopairs")
+
+    use("lukas-reineke/indent-blankline.nvim")
+
     use {
         'numToStr/Comment.nvim',
         config = function()
