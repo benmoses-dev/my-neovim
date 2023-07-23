@@ -46,14 +46,33 @@ cmp.setup({
         -- Use `ctrl y` to confirm completion
         ['<C-y>'] = cmp.mapping.confirm({ select = true }),
 
-        -- Do not use tabs or up and down arrows for selection
-        ['<Tab>'] = nil,
-        ['<S-Tab>'] = nil,
-        ['<Up>'] = nil,
-        ['<Down>'] = nil,
-
         -- Ctrl+Space to trigger completion menu
         ['<C-Space>'] = cmp.mapping.complete(),
+
+        -- Abort the current completion and hide the menu
+        ['<C-e>'] = cmp.mapping.abort(),
+
+        -- Disable up and down arrows, tab and shift+tab and enter
+        ['<Tab>'] = cmp.mapping(function(fallback)
+            cmp.close()
+            fallback()
+        end),
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
+            cmp.close()
+            fallback()
+        end),
+        ['<Up>'] = cmp.mapping(function(fallback)
+            cmp.close()
+            fallback()
+        end),
+        ['<Down>'] = cmp.mapping(function(fallback)
+            cmp.close()
+            fallback()
+        end),
+        ['<CR>'] = cmp.mapping(function(fallback)
+            cmp.close()
+            fallback()
+        end),
     }
 })
 
