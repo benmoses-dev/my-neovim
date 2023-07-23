@@ -52,27 +52,31 @@ cmp.setup({
         -- Abort the current completion and hide the menu
         ['<C-e>'] = cmp.mapping.abort(),
 
-        -- Disable up and down arrows, tab and shift+tab and enter
+        -- Disable up and down arrows, tab and shift+tab and enter (use n, p and y instead)
         ['<Tab>'] = cmp.mapping(function(fallback)
             cmp.close()
             fallback()
-        end),
+        end, {'i', 's'}),
+
         ['<S-Tab>'] = cmp.mapping(function(fallback)
             cmp.close()
             fallback()
-        end),
+        end, {'i', 's'}),
+
         ['<Up>'] = cmp.mapping(function(fallback)
             cmp.close()
             fallback()
-        end),
+        end, {'i', 's'}),
+
         ['<Down>'] = cmp.mapping(function(fallback)
             cmp.close()
             fallback()
-        end),
+        end, {'i', 's'}),
+
         ['<CR>'] = cmp.mapping(function(fallback)
             cmp.close()
             fallback()
-        end),
+        end, {'i', 's'}),
     }
 })
 
