@@ -22,20 +22,20 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- delete without clipboard
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- yank to the end of the line instead of the whole line
 vim.keymap.set("n", "Y", "y$")
 
 -- yank into the system clipboard instead of vim clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- format the buffer
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-vim.keymap.set({"n", "v"}, "Q", "gq")
+vim.keymap.set({ "n", "v" }, "Q", "gq")
 
 vim.keymap.set("n", "<leader>h", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>cprev<CR>zz")
@@ -49,6 +49,8 @@ vim.keymap.set("n", "<leader>sr", [[:%s/\<\>//gc<Left><Left><Left><Left><Left><L
 -- make current file executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
+vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
+
 -- d = *cut
 -- <leader>d = delete
 -- y = *copy
@@ -56,4 +58,3 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- p/P = *paste
 -- <leader>p = *overwrite
 -- ctrl+shift v = +paste
-
