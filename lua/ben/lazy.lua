@@ -21,6 +21,10 @@ return {
     },
 
     {
+        "eandrju/cellular-automaton.nvim"
+    },
+
+    {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         version = "^3.5.4"
