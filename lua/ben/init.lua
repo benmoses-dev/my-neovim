@@ -16,3 +16,4 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("ben.lazy")
 require("ben.lsp-ocaml")
+require("ben.debug")

@@ -57,3 +57,10 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- <leader>p = *overwrite
 -- ctrl+shift v = +paste
 
+vim.keymap.set("n", "<F5>", function() require("dap").continue() end)
+vim.keymap.set("n", "<Leader>n", function() require("dap").step_over() end)
+vim.keymap.set("n", "<Leader>i", function() require("dap").step_into() end)
+vim.keymap.set("n", "<Leader>o", function() require("dap").step_out() end)
+vim.keymap.set("n", "<Leader>b", function() require("dap").toggle_breakpoint() end)
+vim.keymap.set("n", "<Leader>B", function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end)
+
